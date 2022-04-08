@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "email": "yhamagee@gmail.com",
+      "salt": "$2a$10$wDD.twqGj1lLocR0nuk7YO",
+      "password": "$2a$10$wDD.twqGj1lLocR0nuk7YO3icubXm3RQyABrz9Fe8Ai5PcWbqKYsq"
+    }
+  ],
+  "todo": []
+}
