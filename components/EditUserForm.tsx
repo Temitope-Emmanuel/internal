@@ -4,7 +4,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Input from "../components/Input";
-import { IUser } from "../services/db.service";
+import { IUser } from "../types";
 
 const TodoForm: React.FC<{
   user:Pick<IUser, 'email'>,

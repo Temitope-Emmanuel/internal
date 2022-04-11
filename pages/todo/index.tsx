@@ -10,10 +10,22 @@ import React from "react";
 import TodoForm from "../../components/TodoForm";
 import TodoList from "../../components/TodoList";
 import AuthLayout from "../../layouts/AuthLayout";
+import { todoService } from "../../services";
+import useAuthService from "../../utils/auth";
+
+export async function getServerSideProps() {
+
+  const response = await todoService.getTodo()
+  console.log({response})
+  return {
+    props: {todos: response}, // will be passed to the page component as props
+  }
+}
 
 const Todo:React.FC<{
   todos: []
 }> = (props) => {
+  const {user} = useAuthService()
   const { isOpen, onToggle } = useDisclosure();
   const [todo, setTodo] = React.useState([]);
 
@@ -48,7 +60,10 @@ const Todo:React.FC<{
 
   const addTodo = async ({description,title}: {title: string; description: string}) => {
     const response = await fetch('/api/todo',{
-      body: JSON.stringify({title, description}),
+      body: JSON.stringify({title, description, author: {
+        email: user.email,
+        id: user.id
+      }}),
       method: 'POST'
     })
     const data = await response.json()
@@ -79,7 +94,7 @@ const Todo:React.FC<{
               />
           </Collapse>
         </VStack>
-        <VStack my="auto">
+        <VStack my="auto" w='75%'>
           {todo.length ? 
             <TodoList 
               {...{deleteTodo,updateTodo}}

@@ -1,24 +1,9 @@
 import { join, dirname } from 'path';
-import { Low, LocalStorage, JSONFile } from 'lowdb';
+import { Low, JSONFile } from 'lowdb';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
 import { nanoid } from 'nanoid';
-
-export interface IUser {
-    id: string;
-    email: string;
-    password: string;
-    salt: string;
-}
-
-export interface ITodo {
-    id: string;
-    type: 'completed' | 'todo';
-    title: string;
-    description: string;
-}
-
-export type Data = { users: IUser[], todos: ITodo[] };
+import { Data, IUser, ITodo } from '../types';
 
 export class DB {
     private db: Low<Data> | undefined;
@@ -144,13 +129,14 @@ export class DB {
         }
     }
 
-    async createTodo({ description, title }: Omit<ITodo, 'id' | 'type'>) {
+    async createTodo({ description, title, author }: Omit<ITodo, 'id' | 'type'>) {
         try {
             const newTodo: ITodo = {
                 id: nanoid(),
                 title,
                 description,
-                type: 'completed',
+                type: 'todo',
+                author
             }
             this.db?.data?.todos.push(newTodo)
             await this.update();
@@ -168,12 +154,12 @@ export class DB {
 
     async updateTodo(id: string, newTodo: Partial<ITodo>) {
         const foundIdx = this.db?.data?.todos.findIndex(item => item.id === id)
-        if (foundIdx && foundIdx !== -1) {
+        if (foundIdx !== -1) {
             const updatedTodo = {
-                ...this.db?.data?.todos[foundIdx],
+                ...this.db?.data?.todos[foundIdx as number],
                 ...newTodo
             }
-            this.db?.data?.todos.splice(foundIdx, 1, updatedTodo as any)
+            this.db?.data?.todos.splice(foundIdx as number, 1, updatedTodo as any)
             await this.update();
             return ({
                 message: 'update successful',

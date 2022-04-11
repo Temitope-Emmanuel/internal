@@ -1,4 +1,5 @@
-import {DB, IUser} from './db.service';
+import { IUser } from '../types';
+import {DB} from './db.service';
 
 export class UserService {
     private DB: DB;

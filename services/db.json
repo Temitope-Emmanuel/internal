@@ -1,11 +1,32 @@
 {
-  "todos": [],
+  "todos": [
+    {
+      "id": "AmZZaouohNM7U_vQag8Ed",
+      "title": "#1 Todo",
+      "description": "This is the first todo here",
+      "type": "todo",
+      "author": {
+        "email": "yhamagee@gmail.com",
+        "id": "a5x23zvbZTb0Jkj2jBzpe"
+      }
+    },
+    {
+      "id": "xyWPhOitde1pdHSmhAGD7",
+      "title": "#2 Todo",
+      "description": "Adding another todo here",
+      "type": "todo",
+      "author": {
+        "email": "yhamagee@gmail.com",
+        "id": "a5x23zvbZTb0Jkj2jBzpe"
+      }
+    }
+  ],
   "users": [
     {
-      "id": "Zo4ZYIFtY8E27OjwSs-ab",
-      "email": "temitopeojo002@gmail.com",
-      "salt": "$2a$10$hnfm6eyy7LBb87eEYtm9ju",
-      "password": "$2a$10$hnfm6eyy7LBb87eEYtm9juoTt1U4HPBY0rWSptqYY0tGbceEJMIyK"
+      "id": "a5x23zvbZTb0Jkj2jBzpe",
+      "email": "yhamagee02@gmail.com",
+      "salt": "$2a$10$L4SxVa2UFpTLjiSWiy2hEu",
+      "password": "$2a$10$L4SxVa2UFpTLjiSWiy2hEuT5T85Lm7kCfOMUGP4v5TJzxpW0Nl2YO"
     }
   ]
 }

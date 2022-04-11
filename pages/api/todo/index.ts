@@ -15,7 +15,11 @@ export default async function handler(
         const newTodo = {
             title: body.title,
             type: 'completed',
-            description: body.description
+            description: body.description,
+            author: {
+                email: body.author.email,
+                id: body.author.id
+            }
         }
         const response = await todoService.createTodo(newTodo)
 

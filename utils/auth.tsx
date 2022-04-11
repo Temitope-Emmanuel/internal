@@ -1,5 +1,5 @@
 import React from 'react';
-import { IUser } from '../services/db.service';
+import { IUser } from '../types';
 
 export const createGenericContext = <T extends unknown>() => {
     const genericContext = React.createContext<T | undefined>(undefined);

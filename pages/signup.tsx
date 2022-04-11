@@ -36,7 +36,7 @@ const Home: NextPage = (props:any) => {
   return (
     <VStack justifyContent='center' alignItems='center' height='100vh'>
       <Text>Sign Up</Text>
-      <VStack m='auto' bg='whitesmoke' boxShadow='md' py={4} w='30vw' borderRadius='md'>
+      <VStack m='auto' bg='whitesmoke' boxShadow='md' p={4} w='30vw' borderRadius='md'>
         <Input
           type='email'
           value={email}

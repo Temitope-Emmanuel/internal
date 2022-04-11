@@ -25,8 +25,8 @@ const TodoForm: React.FC<{
       <VStack
         m="auto"
         bg="whitesmoke"
-        boxShadow="md"
-        py={4}
+        boxShadow="lg"
+        p={4}
         w="30vw"
         borderRadius="md"
       >
