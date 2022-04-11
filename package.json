@@ -10,11 +10,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "bcryptjs": "^2.4.3",
     "framer-motion": "^6",
+    "fs": "^0.0.1-security",
     "json-server": "^0.17.0",
     "jsonwebtoken": "^8.5.1",
     "lowdb": "^3.0.0",

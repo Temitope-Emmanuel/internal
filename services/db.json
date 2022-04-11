@@ -1,10 +1,11 @@
 {
+  "todos": [],
   "users": [
     {
-      "email": "yhamagee@gmail.com",
-      "salt": "$2a$10$wDD.twqGj1lLocR0nuk7YO",
-      "password": "$2a$10$wDD.twqGj1lLocR0nuk7YO3icubXm3RQyABrz9Fe8Ai5PcWbqKYsq"
+      "id": "Zo4ZYIFtY8E27OjwSs-ab",
+      "email": "temitopeojo002@gmail.com",
+      "salt": "$2a$10$hnfm6eyy7LBb87eEYtm9ju",
+      "password": "$2a$10$hnfm6eyy7LBb87eEYtm9juoTt1U4HPBY0rWSptqYY0tGbceEJMIyK"
     }
-  ],
-  "todo": []
+  ]
 }
